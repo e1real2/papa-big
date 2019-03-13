@@ -1,4 +1,4 @@
-nav {
+.main-navbar {
     background: #ffc107;
     font-size: 12pt;
 }
@@ -40,4 +40,18 @@ nav input {
 
 .best-section .card-body {
     background: black;
+}
+.nav-item {
+    color: black;
+}
+@media screen and (max-width: 440px) {
+    #big-papa-text-nav {
+        display: none;
+    }
+}
+.active {
+    color: black;
+}
+.fa {
+    font-size: 16pt;
 }
