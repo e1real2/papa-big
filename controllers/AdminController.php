@@ -18,6 +18,7 @@ use app\models\ContactForm;
 
 class AdminController extends Controller
 {
+    public $layout = 'admin';
     public function actionIndex() {
         return $this->render('index');
     }

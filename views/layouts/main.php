@@ -41,7 +41,7 @@ $current_action = $this->context->action->id;
     </a>
     <div class="d-flex flex-row order-2 order-lg-3">
         <ul class="navbar-nav flex-row">
-            <?php $social_links = SocialLinks::find()->all();?>
+            <?php $social_links = SocialLinks::find()->orderBy(['order_num'=> SORT_ASC])->all();?>
             <?php if($social_links): ?>
                 <?php foreach ($social_links as $link):?>
                     <li class="nav-item"><a class="nav-link px-2" href="<?=$link->url;?>">
