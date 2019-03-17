@@ -3,23 +3,20 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\SliderItems;
+use app\models\Goods;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
-use yii\filters\AccessControl;
+
 /**
- * SliderItemsController implements the CRUD actions for SliderItems model.
+ * GoodsController implements the CRUD actions for Goods model.
  */
-class SliderItemsController extends Controller
+class GoodsController extends Controller
 {
     /**
      * {@inheritdoc}
      */
-    public $layout = 'admin';
-
     public function behaviors()
     {
         return [
@@ -29,26 +26,17 @@ class SliderItemsController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
         ];
     }
 
     /**
-     * Lists all SliderItems models.
+     * Lists all Goods models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => SliderItems::find(),
+            'query' => Goods::find(),
         ]);
 
         return $this->render('index', [
@@ -57,7 +45,7 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Displays a single SliderItems model.
+     * Displays a single Goods model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -70,26 +58,25 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Creates a new SliderItems model.
+     * Creates a new Goods model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new SliderItems();
+        $model = new Goods();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $model->imageFile =  UploadedFile::getInstance($model, 'imageFile');
-            if ($upload_path=$model->upload()) {
-                return $this->redirect(['index']);
-            }
+            return $this->redirect(['view', 'id' => $model->id]);
         }
+
         return $this->render('create', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Updates an existing SliderItems model.
+     * Updates an existing Goods model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -109,7 +96,7 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Deletes an existing SliderItems model.
+     * Deletes an existing Goods model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -123,15 +110,15 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Finds the SliderItems model based on its primary key value.
+     * Finds the Goods model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return SliderItems the loaded model
+     * @return Goods the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = SliderItems::findOne($id)) !== null) {
+        if (($model = Goods::findOne($id)) !== null) {
             return $model;
         }
 

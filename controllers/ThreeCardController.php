@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\SliderItems;
+use app\models\ThreeCard;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -11,15 +11,14 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii\filters\AccessControl;
 /**
- * SliderItemsController implements the CRUD actions for SliderItems model.
+ * ThreeCardController implements the CRUD actions for ThreeCard model.
  */
-class SliderItemsController extends Controller
+class ThreeCardController extends Controller
 {
+    public $layout = 'admin';
     /**
      * {@inheritdoc}
      */
-    public $layout = 'admin';
-
     public function behaviors()
     {
         return [
@@ -42,13 +41,13 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Lists all SliderItems models.
+     * Lists all ThreeCard models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => SliderItems::find(),
+            'query' => ThreeCard::find(),
         ]);
 
         return $this->render('index', [
@@ -57,7 +56,7 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Displays a single SliderItems model.
+     * Displays a single ThreeCard model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -70,26 +69,28 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Creates a new SliderItems model.
+     * Creates a new ThreeCard model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new SliderItems();
+        $model = new ThreeCard();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->imageFile =  UploadedFile::getInstance($model, 'imageFile');
             if ($upload_path=$model->upload()) {
                 return $this->redirect(['index']);
             }
         }
+
         return $this->render('create', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Updates an existing SliderItems model.
+     * Updates an existing ThreeCard model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -109,7 +110,7 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Deletes an existing SliderItems model.
+     * Deletes an existing ThreeCard model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -123,15 +124,15 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Finds the SliderItems model based on its primary key value.
+     * Finds the ThreeCard model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return SliderItems the loaded model
+     * @return ThreeCard the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = SliderItems::findOne($id)) !== null) {
+        if (($model = ThreeCard::findOne($id)) !== null) {
             return $model;
         }
 

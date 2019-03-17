@@ -3,23 +3,22 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\SliderItems;
+use app\models\HistoryCards;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 use yii\filters\AccessControl;
+use yii\web\UploadedFile;
 /**
- * SliderItemsController implements the CRUD actions for SliderItems model.
+ * HistoryCardsController implements the CRUD actions for HistoryCards model.
  */
-class SliderItemsController extends Controller
+class HistoryCardsController extends Controller
 {
+    public $layout = 'admin';
     /**
      * {@inheritdoc}
      */
-    public $layout = 'admin';
-
     public function behaviors()
     {
         return [
@@ -42,13 +41,13 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Lists all SliderItems models.
+     * Lists all HistoryCards models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => SliderItems::find(),
+            'query' => HistoryCards::find(),
         ]);
 
         return $this->render('index', [
@@ -57,7 +56,7 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Displays a single SliderItems model.
+     * Displays a single HistoryCards model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -70,26 +69,28 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Creates a new SliderItems model.
+     * Creates a new HistoryCards model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new SliderItems();
+        $model = new HistoryCards();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->imageFile =  UploadedFile::getInstance($model, 'imageFile');
             if ($upload_path=$model->upload()) {
                 return $this->redirect(['index']);
             }
         }
+
         return $this->render('create', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Updates an existing SliderItems model.
+     * Updates an existing HistoryCards model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -109,7 +110,7 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Deletes an existing SliderItems model.
+     * Deletes an existing HistoryCards model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -123,15 +124,15 @@ class SliderItemsController extends Controller
     }
 
     /**
-     * Finds the SliderItems model based on its primary key value.
+     * Finds the HistoryCards model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return SliderItems the loaded model
+     * @return HistoryCards the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = SliderItems::findOne($id)) !== null) {
+        if (($model = HistoryCards::findOne($id)) !== null) {
             return $model;
         }
 

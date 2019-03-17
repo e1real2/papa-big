@@ -22,15 +22,15 @@ $current_action = $this->context->action->id;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
-    <!--    <title>--><? //= Html::encode($this->title) ?><!--</title>-->
     <title>Big Papa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
     <?php $this->head() ?>
 </head>
-<body >
+<body>
 
 <?php $this->beginBody() ?>
 
@@ -41,22 +41,13 @@ $current_action = $this->context->action->id;
     </a>
     <div class="d-flex flex-row order-2 order-lg-3">
         <ul class="navbar-nav flex-row">
-            <?php $social_links = SocialLinks::find()->orderBy(['order_num'=> SORT_ASC])->all();?>
-            <?php if($social_links): ?>
-                <?php foreach ($social_links as $link):?>
-                    <li class="nav-item"><a class="nav-link px-2" href="<?=$link->url;?>">
-                            <span class="fa fa-<?=$link->type;?>"></span></a>
+            <?php $social_links = SocialLinks::find()->orderBy(['order_num' => SORT_ASC])->all(); ?>
+            <?php if ($social_links): ?>
+                <?php foreach ($social_links as $link): ?>
+                    <li class="nav-item"><a target="_blank" class="nav-link px-2" href="<?= $link->url; ?>">
+                            <span class="fa fa-<?= $link->type; ?>"></span></a>
                     </li>
-<!--                    <li class="nav-item"><a class="nav-link px-2" href="#">-->
-<!--                            <span class="fa fa-twitter"></span></a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item"><a class="nav-link px-2" href="#">-->
-<!--                            <span class="fa fa-youtube"></span></a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link px-2" href="#"><span class="fa fa-instagram"></span></a>-->
-<!--                    </li>-->
-                    <?php endforeach;?>
+                <?php endforeach; ?>
             <?php endif; ?>
         </ul>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
@@ -73,114 +64,66 @@ $current_action = $this->context->action->id;
             <li class="nav-item <?= $current_action === 'about' ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= Url::to('about') ?>">О Нас</a>
             </li>
-            <li class="nav-item <?= $current_action === 'good' ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?= Url::to('good') ?>">Каталог</a>
+            <li class="nav-item <?= $current_action === 'category' ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= Url::to('category') ?>">Каталог</a>
             </li>
             <li class="nav-item <?= $current_action === 'contact' ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= Url::to('contact') ?>">Контакты</a>
             </li>
-
-            <!--            <li class="nav-item dropdown">-->
-            <!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
-            <!--                   aria-haspopup="true" aria-expanded="false">-->
-            <!--                    Dropdown-->
-            <!--                </a>-->
-            <!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-            <!--                    <a class="dropdown-item" href="#">Action</a>-->
-            <!--                    <a class="dropdown-item" href="#">Another action</a>-->
-            <!--                    <div class="dropdown-divider"></div>-->
-            <!--                    <a class="dropdown-item" href="#">Something else here</a>-->
-            <!--                </div>-->
-            <!--            </li>-->
         </ul>
     </div>
 </nav>
 <div class="content container-fluid">
     <?= $content ?>
 </div>
-<!-- Footer -->
-<footer class="page-footer font-small blue pt-4" style="background:#E3A914;">
-
-    <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
-
-        <!-- Grid row -->
-        <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
-
-                <!-- Content -->
-                <h5 class="text-uppercase">Footer Content</h5>
-                <p>Here you can use rows and columns here to organize your footer content.</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none pb-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Links</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Links</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">Link 1</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
+<!--<div class="position-absolute"><img alt="Связатся с нами" src="img/phone.svg" alt="" data-toggle="modal"-->
+<!--                                    data-target="#exampleModalCenter"></div>-->
+<div class="fixed-bottom">
+    <div class="p-2 call-phone float-right">
+        <img alt="Связатся с нами" src="img/phone.svg" alt="" data-toggle="modal"
+             data-target="#exampleModalCenter">
     </div>
-    <!-- Footer Links -->
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Оставить заявку</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Номер телефона</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               placeholder="Введите номер телефона">
 
-    <!-- Copyright -->
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Имя</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               placeholder="Введите ваше имя">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" style="color: black">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4" style="background: #ffc107;">
+
+
     <div class="footer-copyright text-center py-3">© <?= date('Y'); ?> Copyright:
         <a href="<?= Url::to('index'); ?>">bigppapa.kz</a>
     </div>
-    <!-- Copyright -->
 
 </footer>
-<!-- Footer -->
 
 <?php $this->endBody() ?>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

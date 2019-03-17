@@ -55,3 +55,17 @@ nav input {
 .fa {
     font-size: 16pt;
 }
+
+
+.call-phone {
+    width: 50px;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+.call-phone img {
+    background: #ffc107;
+    border: 1px black solid;
+    border-radius:3px;
+    padding: 5px
+}
+

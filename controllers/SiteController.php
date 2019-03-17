@@ -71,6 +71,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout = 'admin';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -124,5 +125,14 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionCategory()
+    {
+        return $this->render('category');
     }
 }
