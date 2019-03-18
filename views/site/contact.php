@@ -25,12 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <script type="text/javascript">
     var map;
+    let lat = "<?=$contact->map_lat;?>";
+    let long = "<?=$contact->map_long;?>";
+    let text = "<?=$contact->map_text;?>";
 
-    DG.then(function () {
-        map = DG.map('map', {
-            center: [<?=$contact->map_lat;?>, <?=$contact->map_long;?>],
-            zoom: 13
+        DG.then(function () {
+            map = DG.map('map', {
+                center: [lat, long],
+                zoom: 16
+            });
+            DG.marker([lat,long]).addTo(map).bindPopup(text);
         });
-        DG.marker([<?=$contact->map_lat;?>,<?=$contact->map_long;?>]).addTo(map).bindPopup(<?=$contact->map_text;?>);
-    });
+
+
 </script>
