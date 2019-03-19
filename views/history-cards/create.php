@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\HistoryCards */
 
-$this->title = Yii::t('app', 'Create History Cards');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'History Cards'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Добавить карточку под историей');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Карточки под историей'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="history-cards-create">

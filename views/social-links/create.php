@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\SocialLinks */
 
-$this->title = Yii::t('app', 'Create Social Links');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Social Links'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Добавить социальную сеть');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Социальные сети'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="social-links-create">

@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'History Cards');
+$this->title = Yii::t('app', 'Карточки под историей');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="history-cards-index">
@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create History Cards'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Добавить карточку под историей'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 

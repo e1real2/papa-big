@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\SliderItems */
 
-$this->title = Yii::t('app', 'Create Slider Items');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Slider Items'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Добавить элемент слайдера');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Элементы слайдера'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="slider-items-create">

@@ -69,7 +69,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                                 ["label" => "Слайдер", "url" => ["slider-items/index"]],
                                                 ["label" => "Карточки под слайдером", "url" => ["three-card/index"]],
                                                 ["label" => "История", "url" => ["history/index"]],
-                                                ["label" => "Карточки под история", "url" => ["history-cards/index"]],
+                                                ["label" => "Карточки под историей", "url" => ["history-cards/index"]],
                                             ],
                                         ],
                                         [
@@ -77,7 +77,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                             "icon" => "home",
                                             "url" => "#",
                                             "items" => [
-                                                ["label" => "главная", "url" => ["social-links/index"]],
+                                                ["label" => "главная", "url" => ["about-us/index"]],
                                             ],
                                         ],
                                         [
@@ -85,7 +85,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                             "icon" => "table",
                                             "url" => "#",
                                             "items" => [
-                                                ["label" => "Категорий", "url" => ["category/index"]],
+                                                ["label" => "Категории", "url" => ["category/index"]],
                                                 ["label" => "Работы", "url" => ["social-links/index"]],
                                             ],
                                         ],
@@ -94,7 +94,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                             "icon" => "home",
                                             "url" => "#",
                                             "items" => [
-                                                ["label" => "главная", "url" => ["contact/index"]],
+                                                ["label" => "Контакты", "url" => ["contact/index"]],
                                             ],
                                         ],
 //                                        ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
