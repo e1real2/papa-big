@@ -11,7 +11,11 @@ use app\models\Category;
 
 
 <section>
-    <h2>Каталог</h2>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 title">
+            <h2>Каталог</h2>
+        </div>
+    </div>
     <?php $categoryes = Category::find()->all(); ?>
 
 
@@ -50,18 +54,63 @@ use app\models\Category;
 </section>
 
 <style>
-    /* Included color classes..
-	.red
-	.blue
-	.orange
-*/
+    /* заголовок */
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
     @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+    .title h1 {
+        color:#FFF;
+        font-weight:800;
+        font-family: 'Source Sans Pro', sans-serif;
+        text-transform:uppercase;
+        dispay:block;
+        width:100%;
+        text-align:center;
+        padding:.8em 0;
+        margin:5em 0 0;
+        border:solid 1px rgba(255,255,255,.2);
+        position:relative;
+        text-shadow:0px 1px 2px #000;
+    }
+
+    .title h1:before, .title h1:after, .title h1 span:before, .title h1 span:after {
+        content:"";
+        display:block;
+        width:16px;
+        height:16px;
+        position:absolute;
+    }
+    .title h1:before {
+        border-right:solid 1px #FFF;
+        border-bottom:solid 1px #FFF;
+        left:-16px;
+        top:-16px;
+    }
+    .title h1:after {
+        border-left:solid 1px #FFF;
+        border-bottom:solid 1px #FFF;
+        right:-16px;
+        top:-16px;
+    }
+    .title h1 span:before {
+        border-right:solid 1px #FFF;
+        border-top:solid 1px #FFF;
+        left:-16px;
+        bottom:-16px;
+    }
+    .title h1 span:after {
+        border-left:solid 1px #FFF;
+        border-top:solid 1px #FFF;
+        right:-16px;
+        bottom:-16px;
+    }
+    /* заголовок */
+
     figure.new_card {
         display: inline;
         font-family: 'Raleway', Arial, sans-serif;
         position: relative;
         overflow: hidden;
-        margin: 10px;
+        margin: 3px;
         min-width: 220px;
         max-width: 310px;
         width: 100%;
@@ -208,11 +257,11 @@ use app\models\Category;
     figure.new_card.orange a:before {
         border-color: transparent transparent #d67118;
     }
-    /*figure.new_card:hover img,*/
-    /*figure.new_card.hover img {*/
-        /*-webkit-transform: scale(1.1);*/
-        /*transform: scale(1.1);*/
-    /*}*/
+    figure.new_card:hover img,
+    figure.new_card.hover img {
+        -webkit-transform: scale(1.01);
+        transform: scale(1.01);
+    }
 
 </style>
 <!--<style>-->
