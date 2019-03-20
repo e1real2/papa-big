@@ -18,14 +18,12 @@ use app\models\Category;
     </div>
     <?php $categoryes = Category::find()->all(); ?>
 
-
     <div class="row">
-        <div class="col-sm-6 col-md-12 col-lg-12">
+        <div class="col-sm-12▌ col-md-12 col-lg-12">
             <?php if($categoryes):?>
         <?php foreach ($categoryes as $category):?>
             <figure class="new_card">
                 <img src="<?=$category->imgUrl();?>" alt="sample71"/>
-<!--                <div class="price">$19.00</div>-->
                 <figcaption>
                     <h3><?=$category->name;?></h3>
                     <p>
@@ -37,20 +35,6 @@ use app\models\Category;
             <?php endif;?>
         </div>
     </div>
-<!--    <div class="row">-->
-<!--        <div class="col-sm-6 col-md-4 col-lg-3">-->
-<!--            <div class="card">-->
-<!--                <a href="#fake-url">-->
-<!--                    <img class="card-img-top" src="--><?//=$category->imgUrl();?><!--" alt="">-->
-<!--                    <div class="card-body">-->
-<!--                        <h4 class="h4">--><?//=$category->name;?><!--</h4>-->
-<!--                        <p class="card-text">--><?//=$category->description;?><!--</p>-->
-<!--                    </div>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
 </section>
 
 <style>
@@ -264,20 +248,3 @@ use app\models\Category;
     }
 
 </style>
-<!--<style>-->
-<!--    .card {-->
-<!--        max-width: 18rem;-->
-<!--        margin: 0 auto;-->
-<!--    }-->
-<!--    .card img {-->
-<!--        object-fit: cover;-->
-<!--        height: 18rem;-->
-<!--    }-->
-<!--    .card a {-->
-<!--        text-decoration: none;-->
-<!--        color: #000;-->
-<!--    }-->
-<!--    .card a:hover,.card a:visited, .card a:active {-->
-<!--        color: #343a40;-->
-<!--    }-->
-<!--</style>-->

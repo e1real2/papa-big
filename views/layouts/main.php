@@ -18,6 +18,7 @@ $current_action = $this->context->action->id;
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    <?php $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' =>'favicon.ico']);?>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,43 +79,46 @@ $current_action = $this->context->action->id;
 </div>
 <!--<div class="position-absolute"><img alt="Связатся с нами" src="img/phone.svg" alt="" data-toggle="modal"-->
 <!--                                    data-target="#exampleModalCenter"></div>-->
+
 <div class="fixed-bottom">
     <div class="p-2 call-phone float-right">
+        <a href="tel:+77789997751">
         <img alt="Связатся с нами" src="img/phone.svg" alt="" data-toggle="modal"
              data-target="#exampleModalCenter">
+        </a>
     </div>
 </div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Оставить заявку</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Номер телефона</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                               placeholder="Введите номер телефона">
-
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Имя</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                               placeholder="Введите ваше имя">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-warning" style="color: black">Отправить</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"-->
+<!--     aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <h5 class="modal-title" id="exampleModalLongTitle">Оставить заявку</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                    <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <form>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="exampleInputEmail1">Номер телефона</label>-->
+<!--                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"-->
+<!--                               placeholder="Введите номер телефона">-->
+<!---->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="exampleInputEmail1">Имя</label>-->
+<!--                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"-->
+<!--                               placeholder="Введите ваше имя">-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <button type="button" class="btn btn-warning" style="color: black">Отправить</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4" style="background: #ffc107;">
 
