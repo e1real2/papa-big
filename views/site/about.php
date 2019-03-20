@@ -8,7 +8,8 @@ $this->title = 'О НАС';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    <h2 class="text-center"><?=$this->title;?></h2>
+    <p class="h3 text-center"><?=$this->title;?></p>
+    <div class="divider div-transparent m-2"></div>
 
     <p>
         Мастерская мебели "Big-Papa"....

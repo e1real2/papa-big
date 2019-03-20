@@ -13,7 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $contact = Contact::find()->orderBy(['id'=>SORT_DESC])->one();?>
 <div class="site-contact">
-    <h2 class="text-center"><?= Html::encode($this->title) ?></h2>
+    <p class="h3 text-center"><?=$this->title;?></p>
+    <div class="divider div-transparent m-2"></div>
     <div class="row">
         <div class="col" >
             <p><?=$contact->description;?></p>
