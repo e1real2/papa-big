@@ -50,9 +50,9 @@ class Goods extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
-            'description' => Yii::t('app', 'Description'),
+            'description' => 'Описание',
             'category_id' => Yii::t('app', 'Category ID'),
-            'order_number' => Yii::t('app', 'Order Number'),
+            'order_number' => 'Порядковый номер',
             'height' => Yii::t('app', 'Height'),
             'width' => Yii::t('app', 'Width'),
             'length' => Yii::t('app', 'Length'),

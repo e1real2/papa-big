@@ -43,11 +43,11 @@ class Contact extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
-            'description' => Yii::t('app', 'Description'),
-            'map_lat' => Yii::t('app', 'Map Lat'),
-            'map_long' => Yii::t('app', 'Map Long'),
-            'map_text' => Yii::t('app', 'Map Text'),
+            'title' => 'Заголовок',
+            'description' => 'Описание',
+            'map_lat' => 'Шырота',
+            'map_long' => 'Долгота',
+            'map_text' => 'Текст внутри карты',
         ];
     }
 }

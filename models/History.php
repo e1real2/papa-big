@@ -40,8 +40,8 @@ class History extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
-            'description' => Yii::t('app', 'Description'),
+            'title' => 'Заголовок',
+            'description' => 'Описание',
         ];
     }
 }

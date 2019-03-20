@@ -42,9 +42,9 @@ class SocialLinks extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'url' => Yii::t('app', 'Url'),
-            'order_num' => Yii::t('app', 'Order Num'),
-            'type' => Yii::t('app', 'Type'),
+            'url' => 'Ссылка на соцсеть',
+            'order_num' => 'Порядок',
+            'type' => 'Тип',
         ];
     }
 }

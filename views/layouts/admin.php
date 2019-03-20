@@ -63,7 +63,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         [
                                             "label" => "Главная старница",
                                             "icon" => "home",
-                                            "url" => "#",
+                                            "url" => "#main",
                                             "items" => [
                                                 ["label" => "Социальные сети", "url" => ["social-links/index"]],
                                                 ["label" => "Слайдер", "url" => ["slider-items/index"]],
@@ -75,7 +75,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         [
                                             "label" => "Страница о нас",
                                             "icon" => "home",
-                                            "url" => "#",
+                                            "url" => "#about",
                                             "items" => [
                                                 ["label" => "главная", "url" => ["about-us/index"]],
                                             ],
@@ -83,7 +83,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         [
                                             "label" => "Страница каталог",
                                             "icon" => "table",
-                                            "url" => "#",
+                                            "url" => "#category",
                                             "items" => [
                                                 ["label" => "Категории", "url" => ["category/index"]],
                                                 ["label" => "Работы", "url" => ["social-links/index"]],
@@ -92,71 +92,11 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                         [
                                             "label" => "Страница контакты",
                                             "icon" => "home",
-                                            "url" => "#",
+                                            "url" => "#contact",
                                             "items" => [
                                                 ["label" => "Контакты", "url" => ["contact/index"]],
                                             ],
-                                        ],
-//                                        ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
-//                                        ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
-//                                        [
-//                                            "label" => "Widgets",
-//                                            "icon" => "th",
-//                                            "url" => "#",
-//                                            "items" => [
-//                                                ["label" => "Menu", "url" => ["site/menu"]],
-//                                                ["label" => "Panel", "url" => ["site/panel"]],
-//                                            ],
-//                                        ],
-//                                        [
-//                                            "label" => "Badges",
-//                                            "url" => "#",
-//                                            "icon" => "table",
-//                                            "items" => [
-//                                                [
-//                                                    "label" => "Default",
-//                                                    "url" => "#",
-//                                                    "badge" => "123",
-//                                                ],
-//                                                [
-//                                                    "label" => "Success",
-//                                                    "url" => "#",
-//                                                    "badge" => "new",
-//                                                    "badgeOptions" => ["class" => "label-success"],
-//                                                ],
-//                                                [
-//                                                    "label" => "Danger",
-//                                                    "url" => "#",
-//                                                    "badge" => "!",
-//                                                    "badgeOptions" => ["class" => "label-danger"],
-//                                                ],
-//                                            ],
-//                                        ],
-//                                        [
-//                                            "label" => "Multilevel",
-//                                            "url" => "#",
-//                                            "icon" => "table",
-//                                            "items" => [
-//                                                [
-//                                                    "label" => "Second level 1",
-//                                                    "url" => "#",
-//                                                ],
-//                                                [
-//                                                    "label" => "Second level 2",
-//                                                    "url" => "#",
-//                                                    "items" => [
-//                                                        [
-//                                                            "label" => "Third level 1",
-//                                                            "url" => "#",
-//                                                        ],
-//                                                        [
-//                                                            "label" => "Third level 2",
-//                                                            "url" => "#",
-//                                                        ],
-//                                                    ],
-//                                                ],
-//                                            ],
-//                                        ],
+                                        ]
                                     ],
                                 ]
                             )

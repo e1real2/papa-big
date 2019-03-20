@@ -36,7 +36,7 @@ $current_action = $this->context->action->id;
 <?php $this->beginBody() ?>
 
 <nav class="navbar navbar-expand-lg navbar-light sticky-top main-navbar">
-    <a class="navbar-brand" href="<?= Url::to('index'); ?>">
+    <a class="navbar-brand" href="<?= Url::to('/'); ?>">
         <?php echo Html::img('@web/img/papa-icon.png', ['class' => 'logo', 'alt' => 'Big Papa']); ?>
         <span id="big-papa-text-nav">Big Papa</span>
     </a>

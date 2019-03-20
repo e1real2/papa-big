@@ -61,10 +61,10 @@ class ThreeCard extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'image' => Yii::t('app', 'Image'),
-            'title' => Yii::t('app', 'Title'),
-            'description' => Yii::t('app', 'Description'),
-            'order_number' => Yii::t('app', 'Order Number'),
+            'image' => 'Картинка',
+            'title' => 'Заголовок',
+            'description' => 'Описание',
+            'order_number' => 'Порядковый номер',
         ];
     }
 

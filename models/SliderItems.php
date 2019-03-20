@@ -63,9 +63,9 @@ class SliderItems extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'file_path' => Yii::t('app', 'File Path'),
-            'title' => Yii::t('app', 'Title'),
-            'description' => Yii::t('app', 'Description'),
-            'order_number' => Yii::t('app', 'Order Number'),
+            'title' => 'Заголовок',
+            'description' => 'Описание',
+            'order_number' => 'Порядковый номер',
         ];
     }
 

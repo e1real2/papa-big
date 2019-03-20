@@ -4,11 +4,11 @@
 
 use yii\helpers\Html;
 
-$this->title = 'About';
+$this->title = 'О НАС';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    <h2>О нас</h2>
+    <h2 class="text-center"><?=$this->title;?></h2>
 
     <p>
         Мастерская мебели "Big-Papa"....

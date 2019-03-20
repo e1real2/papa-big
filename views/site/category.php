@@ -7,33 +7,31 @@
  */
 
 use app\models\Category;
+
 ?>
 
 
 <section>
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 title">
-            <h2>Каталог</h2>
-        </div>
-    </div>
-    <?php $categoryes = Category::find()->all(); ?>
+    <p class="h3 text-center">КАТАЛОГ</p>
+    <div class="divider div-transparent m-2"></div>
+
 
     <div class="row">
-        <div class="col-sm-12▌ col-md-12 col-lg-12">
-            <?php if($categoryes):?>
-        <?php foreach ($categoryes as $category):?>
-            <figure class="new_card">
-                <img src="<?=$category->imgUrl();?>" alt="sample71"/>
-                <figcaption>
-                    <h3><?=$category->name;?></h3>
-                    <p>
-                        <?=$category->description;?>
-                    </p><a href="#">Просмотреть</a>
-                </figcaption>
-            </figure>
-        <?php endforeach;?>
-            <?php endif;?>
-        </div>
+        <?php $categoryes = Category::find()->all(); ?>
+        <!-- Team member -->
+        <?php foreach ($categoryes as $category): ?>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <figure class="new_card">
+                    <img src="<?= $category->imgUrl(); ?>" alt="sample71"/>
+                    <figcaption>
+                        <h6><?= $category->name; ?></h6>
+                        <p>
+                            <?= $category->description; ?>
+                        </p><a href="#">Просмотреть</a>
+                    </figcaption>
+                </figure>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
 
@@ -41,52 +39,130 @@ use app\models\Category;
     /* заголовок */
     @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
     @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+
+
+    .wrapper
+    {
+        padding-bottom: 90px;
+    }
+
+    .divider
+    {
+        position: relative;
+        height: 1px;
+    }
+
+    .div-transparent:before
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+    }
+
+
+
+    .div-tab-down:after
+    {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: calc(50% - 10px);
+        width: 20px;
+        height: 14px;
+        background-color: white;
+        border-bottom: 1px solid rgb(48,49,51);
+        border-left: 1px solid rgb(48,49,51);
+        border-right: 1px solid rgb(48,49,51);
+        border-radius: 0 0 8px 8px;
+    }
+
+    .div-stopper:after
+    {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -6px;
+        left: calc(50% - 7px);
+        width: 14px;
+        height: 12px;
+        background-color: white;
+        border-left: 1px solid rgb(48,49,51);
+        border-right: 1px solid rgb(48,49,51);
+    }
+
+    .div-dot:after
+    {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -9px;
+        left: calc(50% - 9px);
+        width: 18px;
+        height: 18px;
+        background-color: goldenrod;
+        border: 1px solid rgb(48,49,51);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px white,
+        0 0 0 4px white;
+    }
+
     .title h1 {
-        color:#FFF;
-        font-weight:800;
+        color: #FFF;
+        font-weight: 800;
         font-family: 'Source Sans Pro', sans-serif;
-        text-transform:uppercase;
-        dispay:block;
-        width:100%;
-        text-align:center;
-        padding:.8em 0;
-        margin:5em 0 0;
-        border:solid 1px rgba(255,255,255,.2);
-        position:relative;
-        text-shadow:0px 1px 2px #000;
+        text-transform: uppercase;
+        dispay: block;
+        width: 100%;
+        text-align: center;
+        padding: .8em 0;
+        margin: 5em 0 0;
+        border: solid 1px rgba(255, 255, 255, .2);
+        position: relative;
+        text-shadow: 0px 1px 2px #000;
     }
 
     .title h1:before, .title h1:after, .title h1 span:before, .title h1 span:after {
-        content:"";
-        display:block;
-        width:16px;
-        height:16px;
-        position:absolute;
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
     }
+
     .title h1:before {
-        border-right:solid 1px #FFF;
-        border-bottom:solid 1px #FFF;
-        left:-16px;
-        top:-16px;
+        border-right: solid 1px #FFF;
+        border-bottom: solid 1px #FFF;
+        left: -16px;
+        top: -16px;
     }
+
     .title h1:after {
-        border-left:solid 1px #FFF;
-        border-bottom:solid 1px #FFF;
-        right:-16px;
-        top:-16px;
+        border-left: solid 1px #FFF;
+        border-bottom: solid 1px #FFF;
+        right: -16px;
+        top: -16px;
     }
+
     .title h1 span:before {
-        border-right:solid 1px #FFF;
-        border-top:solid 1px #FFF;
-        left:-16px;
-        bottom:-16px;
+        border-right: solid 1px #FFF;
+        border-top: solid 1px #FFF;
+        left: -16px;
+        bottom: -16px;
     }
+
     .title h1 span:after {
-        border-left:solid 1px #FFF;
-        border-top:solid 1px #FFF;
-        right:-16px;
-        bottom:-16px;
+        border-left: solid 1px #FFF;
+        border-top: solid 1px #FFF;
+        right: -16px;
+        bottom: -16px;
     }
+
     /* заголовок */
 
     figure.new_card {
@@ -103,22 +179,26 @@ use app\models\Category;
         text-align: left;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     }
+
     figure.new_card * {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
         transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     }
+
     figure.new_card img {
         max-width: 100%;
         vertical-align: top;
     }
+
     figure.new_card figcaption {
         position: relative;
         background-color: #ffffff;
         padding: 20px 25px 50px;
     }
-    figure.new_card h3 {
+
+    figure.new_card h6 {
         position: absolute;
         bottom: 100%;
         text-transform: uppercase;
@@ -130,10 +210,12 @@ use app\models\Category;
         background-color: #000000;
         color: #ffffff;
     }
-    figure.new_card h3 span {
+
+    figure.new_card h6 span {
         font-weight: 800;
     }
-    figure.new_card h3:before {
+
+    figure.new_card h6:before {
         position: absolute;
         left: 100%;
         border-style: solid;
@@ -142,6 +224,7 @@ use app\models\Category;
         content: '';
         top: 0;
     }
+
     figure.new_card p {
         font-size: 0.8em;
         font-weight: 500;
@@ -149,6 +232,7 @@ use app\models\Category;
         margin: 0;
         line-height: 1.6em;
     }
+
     figure.new_card .price {
         position: absolute;
         top: 0;
@@ -159,6 +243,7 @@ use app\models\Category;
         line-height: 40px;
         font-weight: 800;
     }
+
     figure.new_card .price:before {
         position: absolute;
         right: 100%;
@@ -168,6 +253,7 @@ use app\models\Category;
         content: '';
         top: 0;
     }
+
     figure.new_card a {
         text-decoration: none;
         position: absolute;
@@ -181,6 +267,7 @@ use app\models\Category;
         font-size: 0.9em;
         text-transform: uppercase;
     }
+
     figure.new_card a:before {
         position: absolute;
         right: 100%;
@@ -190,59 +277,76 @@ use app\models\Category;
         content: '';
         top: 0;
     }
+
     figure.new_card.blue {
         background-color: #2472a4;
     }
-    figure.new_card.blue h3,
+
+    figure.new_card.blue h6,
     figure.new_card.blue a,
     figure.new_card.blue .price {
         background-color: #2472a4;
     }
+
     figure.new_card.blue .price:before {
         border-color: transparent #2472a4 transparent;
     }
-    figure.new_card.blue h3:before {
+
+    figure.new_card.blue h6:before {
         border-color: transparent transparent transparent #2472a4;
     }
+
     figure.new_card.blue a:before {
         border-color: transparent transparent #2472a4;
     }
+
     figure.new_card.red {
         background-color: #ab3326;
     }
-    figure.new_card.red h3,
+
+    figure.new_card.red h6,
     figure.new_card.red a,
     figure.new_card.red .price {
         background-color: #ab3326;
     }
+
     figure.new_card.red .price:before {
         border-color: transparent #ab3326 transparent;
     }
-    figure.new_card.red h3:before {
+
+    figure.new_card.red h6:before {
         border-color: transparent transparent transparent #ab3326;
     }
+
     figure.new_card.red a:before {
         border-color: transparent transparent #ab3326;
     }
+
     figure.new_card.orange {
         background-color: #d67118;
     }
-    figure.new_card.orange h3,
+
+    figure.new_card.orange h6,
     figure.new_card.orange a,
     figure.new_card.orange .price {
         background-color: #d67118;
     }
+
     figure.new_card.orange .price:before {
         border-color: transparent #d67118 transparent;
     }
-    figure.new_card.orange h3:before {
+
+    figure.new_card.orange h6:before {
         border-color: transparent transparent transparent #d67118;
     }
+
     figure.new_card.orange a:before {
         border-color: transparent transparent #d67118;
     }
+
     figure.new_card:hover img,
     figure.new_card.hover img {
+        cursor: pointer;
         -webkit-transform: scale(1.01);
         transform: scale(1.01);
     }

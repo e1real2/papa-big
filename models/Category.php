@@ -59,9 +59,9 @@ class Category extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
-            'image' => Yii::t('app', 'Image'),
-            'description' => Yii::t('app', 'Description'),
-            'order_number' => Yii::t('app', 'Order Number'),
+            'image' => 'Картинка',
+            'description' => 'Описание',
+            'order_number' => 'Порядковый номер',
         ];
     }
     public function upload()
