@@ -1,7 +1,9 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Category;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Goods */
@@ -15,8 +17,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(Category::find()->all(), 'id', 'name'), ['prompt'=>'Выберите категорию']) ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
+<!--    --><?//= $form->field($model, 'category_id')->textInput() ?>
 
     <?= $form->field($model, 'order_number')->textInput() ?>
 
