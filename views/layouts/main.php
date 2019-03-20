@@ -120,16 +120,14 @@ $current_action = $this->context->action->id;
 <!--    </div>-->
 <!--</div>-->
 <!-- Footer -->
-<footer class="page-footer font-small blue pt-4" style="background: #ffc107;">
-
-
+<footer class="page-footer font-small blue" style="background: #ffc107;">
     <div class="footer-copyright text-center py-3">© <?= date('Y'); ?> Copyright:
         <a href="<?= Url::to('index'); ?>">bigppapa.kz</a>
     </div>
-
 </footer>
 
 <?php $this->endBody() ?>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

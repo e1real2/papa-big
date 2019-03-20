@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * GoodsController implements the CRUD actions for Goods model.
  */
@@ -17,6 +17,8 @@ class GoodsController extends Controller
     /**
      * {@inheritdoc}
      */
+    public $layout = 'admin';
+
     public function behaviors()
     {
         return [
@@ -24,6 +26,15 @@ class GoodsController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
         ];

@@ -86,7 +86,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                             "url" => "#category",
                                             "items" => [
                                                 ["label" => "Категории", "url" => ["category/index"]],
-                                                ["label" => "Наши работы", "url" => ["social-links/index"]],
+                                                ["label" => "Наши работы", "url" => ["goods/index"]],
                                             ],
                                         ],
                                         [
